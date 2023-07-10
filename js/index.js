@@ -86,9 +86,8 @@ arrayPrd.forEach((el) => {
       position: "center",
       icon: "success",
       title: "Se guardo al carrito correctamente el producto " + el.nombre,
-      showConfirmButton: true,
-      confirmButtonText: "Excelente",
-      timer: 3000,
+      showConfirmButton: false,
+      timer: 2000,
     });
   });
 
@@ -160,15 +159,13 @@ buttonFinalizar.addEventListener("click", () => {
 
   const buttonPagar = document.createElement("button");
   buttonPagar.innerText = "Pagar";
+  const buttonVaciar = document.createElement("button");
+  buttonVaciar.innerText = "Vaciar carrito";
 
   buttonPagar.addEventListener("click", () => {
 
     nroPedido++;
-    
-    
-
-    
-      Swal.fire({
+    Swal.fire({
         position: "center",
         icon: "success",
         title: "Muchas gracias por tu compra \n N° de pedido " +nroPedido.toString().padStart(6,"0")+ ' \n fecha ' + moment().format('LL'),
@@ -191,7 +188,15 @@ buttonFinalizar.addEventListener("click", () => {
     
   });
 
+  buttonVaciar.addEventListener("click", () => {
+    localStorage.removeItem("carrito");
+    location.reload();
+  });
+
+
   sector2.appendChild(buttonPagar);
+  sector2.appendChild(buttonVaciar);
+  
 
 
 })

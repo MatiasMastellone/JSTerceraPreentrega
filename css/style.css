@@ -59,6 +59,7 @@ main{
 }
 .tarjeta_informacion {
     padding: 12px;
+    height: 150px;
 }
 
 .contenedor{

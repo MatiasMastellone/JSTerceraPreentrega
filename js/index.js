@@ -175,7 +175,6 @@ buttonFinalizar.addEventListener("click", () => {
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
-          Swal.fire('Saved!', '', 'success')
           localStorage.setItem("nrPedido",nroPedido);
           localStorage.removeItem("carrito");
           location.reload();
